@@ -1,0 +1,40 @@
+.app-wrapper {
+    display: grid;
+    width: 1440px;
+    margin: 0 auto;
+    grid-template-areas:
+    "h h"
+    "n c";
+    grid-template-rows: 100px 1fr;
+    grid-template-columns: 2fr 10fr;
+}
+
+.header {
+    grid-area: h;
+}
+
+.nav {
+    grid-area: n;
+}
+
+.content {
+    grid-area: c;
+}
+.logo_img{
+    width: 80px;
+}
+.content_img{
+    width: 100%;
+    height: 200px;
+}
+.content_ava{
+    width: 150px;
+}
+.content_ava_micro{
+    width: 50px;
+    border-radius: 50%;
+}
+.profile_info{
+    display: flex;
+    flex-direction: row;
+}
