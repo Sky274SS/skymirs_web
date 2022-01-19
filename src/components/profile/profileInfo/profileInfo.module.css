@@ -1,0 +1,12 @@
+.contentImg{
+    width: 100%;
+    height: 200px;
+}
+.contentAva{
+    width: 150px;
+}
+.profileInfo{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}

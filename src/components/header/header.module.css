@@ -1,0 +1,25 @@
+.header {
+    display: grid;
+    grid-area: h;
+    background: rgb(19,14,93);
+    background: linear-gradient(197deg, rgba(19,14,93,1) 0%, rgba(0,51,153,1) 50%, rgba(19,14,93,1) 100%);
+    align-items: center;
+    grid-template-columns: 100px 1fr;
+}
+
+.logo_img {
+    margin: 0 0 0 10px;
+}
+img{
+    width: 80px;
+}
+.logo_name {
+    display: grid;
+    justify-items: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 35px;
+    color:#33CCFF;
+    text-shadow: 0 0 15px black;
+    cursor: default;
+}
