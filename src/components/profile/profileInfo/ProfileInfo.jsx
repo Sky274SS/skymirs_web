@@ -6,7 +6,7 @@ const ProfileInfo = () => {
         <div>
             <div>
                 <img
-                    src="https://img2.goodfon.ru/original/3200x1200/2/f2/mlechnyy-put-noch-zvezdy-4613.jpg"
+                    src="https://i08.fotocdn.net/s111/b4d4df3604976f85/public_pin_l/2490591478.jpg"
                     alt="bg_img"
                     className={styles.contentImg}/>
             </div>

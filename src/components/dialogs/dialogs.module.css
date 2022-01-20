@@ -6,5 +6,28 @@
     padding: 10px;
 }
 .message{
+    display: grid;
+    justify-items: center;
     padding: 10px;
+}
+.textarea{
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.addMessage{
+    margin-top:30px ;
+    display: grid;
+    width: 80%;
+}
+.button{
+    padding: 5px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 5px;
 }

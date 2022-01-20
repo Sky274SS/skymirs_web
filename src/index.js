@@ -1,15 +1,27 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import config, {onAddMessage, onAddPost, onChangeNewMessage, onChangeNewPost, subscriber} from "./redux/config";
+import ReactDOM from "react-dom";
+import App from "./App";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+
+let rerenderTree = (config) => {
+    ReactDOM.render(
+        <React.StrictMode>
+            <App
+                config={config}
+                addMessage={onAddMessage}
+                addPost={onAddPost}
+                changeNewMessage={onChangeNewMessage}
+                changeNewPost={onChangeNewPost}
+            />
+        </React.StrictMode>,
+        document.getElementById('root')
+    );
+}
+rerenderTree(config)
+subscriber(rerenderTree)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

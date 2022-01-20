@@ -2,17 +2,41 @@ import React from 'react';
 import styles from "./my_posts.module.css";
 import Post from "./post/Post";
 
-const MyPosts = () => {
+
+const MyPosts = (props) => {
+
+    let newPostElement = React.createRef();
+
+    const addPost = () => {
+        let post = newPostElement.current.value
+        props.addPost(post)
+    }
+    const createNewPost = () => {
+        let post = newPostElement.current.value
+        props.changeNewPost(post)
+    }
+
     return (
         <div className={styles.postsArea}>
             <div className={styles.post}>
                 <div>My Posts</div>
-                <div><textarea></textarea></div>
-                <div><button>add post</button></div>
+                <div>
+                    <textarea
+                        ref={newPostElement}
+                        className={styles.textarea}
+                        value={props.newPost}
+                        onChange={createNewPost}
+                    />
+                </div>
+                <div>
+                    <button onClick={addPost} className={styles.button}>add post</button>
+                </div>
             </div>
-            <Post postText={'hello world'} likeCount={10}/>
-            <Post postText={'i am learn react'} likeCount={15}/>
-            <Post postText={'second day'} likeCount={345}/>
+            {props.postData.map((element, id) => {
+                return (
+                    <Post postText={element.postText} likeCount={element.likeCount} key={id}/>
+                )
+            })}
         </div>
     );
 };

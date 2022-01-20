@@ -1,0 +1,17 @@
+.img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 10px;
+    display: grid;
+    justify-items: center;
+}
+
+.friends {
+    display: flex;
+    flex-direction: row;
+    color: #33CCFF;
+}
