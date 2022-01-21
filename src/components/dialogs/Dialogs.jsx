@@ -2,19 +2,20 @@ import React from 'react';
 import styles from './dialogs.module.css'
 import DialogItem from "./dialogItem/DialogItem";
 import Message from "./message/Message";
+import {addMessageCreater, updateNewMessageTextCreater} from "../../redux/dialogsReducer";
 
 
 const Dialogs = (props) => {
 
-    let newMessageElement = React.createRef()
+
 
     const addMessage = () => {
-        let newMessage = newMessageElement.current.value
-        props.addMessage(newMessage)
+
+        props.dispatch(addMessageCreater())
     }
-    const createNewMessage = () => {
-        let newMessage = newMessageElement.current.value
-        props.changeNewMessage(newMessage)
+    const createNewMessage = (e) => {
+        let newMessage = e.target.value
+        props.dispatch(updateNewMessageTextCreater(newMessage))
     }
 
     return (
@@ -37,7 +38,6 @@ const Dialogs = (props) => {
                 <div className={styles.addMessage}>
                     <div>
                         <textarea
-                            ref={newMessageElement}
                             className={styles.textarea}
                             value={props.config.newMessage}
                             onChange={createNewMessage}

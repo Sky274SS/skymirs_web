@@ -1,6 +1,6 @@
 .postsArea{
     display: grid;
-    padding: 10px;
+    padding: 30px;
 }
 .textarea{
     width: 98.5%;
@@ -9,6 +9,10 @@
     outline: none;
     border: none;
     border-radius: 10px;
+    background: rgba(0, 0, 0, 0.35);
+    color: #33CCFF;
+    margin-bottom: 10px;
+    font-size: 17px;
 }
 .button{
     padding: 5px;
@@ -16,7 +20,25 @@
     outline: none;
     border: none;
     border-radius: 5px;
+    background: rgba(0, 0, 0, 0.35);
+    color: #33CCFF;
+    font-size: 17px;
+    min-width: 120px;
+    min-height: 35px;
+}
+.button:hover{
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px #000;
+}
+.button:active{
+    background: rgba(0, 0, 0, 0.5);
 }
 .post{
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+}
+.myPosts{
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: 0 5px 10px #000;
 }

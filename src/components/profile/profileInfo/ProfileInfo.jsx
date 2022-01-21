@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./profileInfo.module.css";
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
     return (
         <div>
             <div>
@@ -14,9 +14,15 @@ const ProfileInfo = () => {
                 <img src="https://coolsen.ru/wp-content/uploads/2021/06/186-2.jpg"
                      alt="ava"
                      className={styles.contentAva}/>
-                <div>
-                    <div>name</div>
-                    <div>description</div>
+                <div className={styles.infoContainer}>
+                    <div className={styles.name}>{props.profileInfo.name}</div>
+                    <div className={styles.info}>
+                        <div>{props.profileInfo.year}</div>
+                        <div>{props.profileInfo.work}</div>
+                    </div>
+                </div>
+                <div className={styles.description}>
+                    {props.profileInfo.info}
                 </div>
             </div>
         </div>

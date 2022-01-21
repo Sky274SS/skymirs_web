@@ -1,5 +1,9 @@
-const store ={
-    _state : {
+import profileReducer from "./profileReducer";
+import dialogsReducer from "./dialogsReducer";
+
+
+const store = {
+    _state: {
         dialogs: {
             dialogsData: [
                 {id: 1, name: 'Alex', img: 'https://a.d-cd.net/1a424f2s-960.jpg'},
@@ -39,32 +43,26 @@ const store ={
 
 
     },
-    getState(){
+    _rerenderTree() {
+        console.log('')
+    },
+
+    getState() {
         return this._state
     },
-    _rerenderTree () {console.log('')},
-    onAddMessage () {
-        this._state.dialogs.messageData.push({message: this._state.dialogs.newMessage, isFriend: false})
-        this._state.dialogs.newMessage = ''
-        this._rerenderTree(this._state)
-    },
-    onAddPost () {
-        this._state.profile.postData.push({postText: this._state.profile.newPost, likeCount: 0})
-        this._state.profile.newPost = ''
-        this._rerenderTree(this._state)
-    },
-    onChangeNewMessage (message) {
-        this._state.dialogs.newMessage = message
-        this._rerenderTree(this._state)
-    },
-    onChangeNewPost (post) {
-        this._state.profile.newPost = post
-        this._rerenderTree(this._state)
-    },
-    subscriber (observer) {
+    subscribe(observer) {
         this._rerenderTree = observer
+    },
+
+    dispatch(action) {
+        this._state.profile = profileReducer(this._state.profile,action)
+        this._state.dialogs = dialogsReducer(this._state.dialogs,action)
+        this._rerenderTree(this._state)
     }
 }
+
+
+
 
 
 window.store = store

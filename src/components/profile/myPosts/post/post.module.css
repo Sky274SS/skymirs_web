@@ -1,18 +1,40 @@
-.post{
+.post {
     display: grid;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     justify-items: start;
-}
-.newPost{
-    display: flex;
-    flex-direction: row;
     align-items: center;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 10px;
+    border-radius: 10px;
+    grid-template-columns: 50px 1fr 70px;
 }
-.avaMicro{
+
+.avaMicro {
     width: 50px;
     border-radius: 50%;
-    margin-right:10px;
 }
-.like{
 
+.like {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.likeImg {
+    width: 20px;
+    cursor: pointer;
+}
+.postText{
+    margin-left: 30px;
+}
+.postTime{
+    font-size: 14px;
+    display: grid;
+    align-items: end;
+    color: #1e7593;
+}
+.postEnd{
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 1fr 1fr;
 }
