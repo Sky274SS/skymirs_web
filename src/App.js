@@ -20,9 +20,9 @@ const App = (props) => {
                     <Routes>
                         <Route path='/profile' element={
                             <Profile
-                                config={props.config.profile}
                                 addPost={props.addPost}
                                 changeNewPost={props.changeNewPost}
+                                config={props.config.profile}
                             />
                         }/>
                         <Route path='/dialogs/*' element={

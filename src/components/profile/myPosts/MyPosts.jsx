@@ -4,14 +4,12 @@ import Post from "./post/Post";
 
 
 const MyPosts = (props) => {
-
     let newPostElement = React.createRef();
 
     const addPost = () => {
-        let post = newPostElement.current.value
-        props.addPost(post)
+        props.addPost()
     }
-    const createNewPost = () => {
+    function createNewPost ()  {
         let post = newPostElement.current.value
         props.changeNewPost(post)
     }
