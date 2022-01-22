@@ -11,7 +11,7 @@ let rerenderTree = (state) => {
         <React.StrictMode>
             <App
                 config={store.getState()}
-                dispatch={store.dispatch.bind(store)}
+                store={store}
             />
         </React.StrictMode>,
         document.getElementById('root')

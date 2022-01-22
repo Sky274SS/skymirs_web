@@ -1,17 +1,17 @@
 import React from 'react';
 import styles from "./my_posts.module.css";
 import Post from "./post/Post";
-import {addPostCreater, updateNewPostTextCreater} from "../../../redux/profileReducer";
 
 
 const MyPosts = (props) => {
 
     const addPost = () => {
-        props.dispatch(addPostCreater())
+        props.addNewPost()
     }
-    function createNewPost (e)  {
+
+    function createNewPost(e) {
         let post = e.target.value
-        props.dispatch(updateNewPostTextCreater(post))
+        props.updateNewPost(post)
     }
 
     return (
@@ -21,7 +21,7 @@ const MyPosts = (props) => {
                 <div>
                     <textarea
                         className={styles.textarea}
-                        value={props.newPost}
+                        value={props.state.newPost}
                         onChange={createNewPost}
                         placeholder={'Enter your text'}
                     />
@@ -30,9 +30,14 @@ const MyPosts = (props) => {
                     <button onClick={addPost} className={styles.button}>add post</button>
                 </div>
             </div>
-            {props.postData.map((element, id) => {
+            {props.state.postData.map((element, id) => {
                 return (
-                    <Post postText={element.postText} likeCount={element.likeCount} time={element.time} key={id}/>
+                    <Post postText={element.postText}
+                          likeCount={element.likeCount}
+                          time={element.time}
+                          key={id}
+                          id={id}
+                          addNewLike={props.addNewLike}/>
                 )
             })}
         </div>

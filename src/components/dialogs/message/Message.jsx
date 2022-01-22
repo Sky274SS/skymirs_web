@@ -15,7 +15,7 @@ const Message = (props) => {
                 </div>
                 : <div className={`${styles.dialog} ${styles.selfDialog}`}>
                     <div>{props.message}</div>
-                    <div>
+                    <div className={styles.dialogElement}> Me:
                         <img src="https://coolsen.ru/wp-content/uploads/2021/06/186-2.jpg"
                              alt="self_ava"
                              className={styles.img}/>

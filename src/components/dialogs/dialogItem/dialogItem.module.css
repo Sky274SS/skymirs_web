@@ -15,7 +15,10 @@
 .container{
     display: grid;
     align-items: center;
-    justify-items: start;
+    justify-items: center;
     grid-template-columns: 50px 1fr;
     margin-bottom: 10px;
+    padding: 10px;
+    background: rgba(0, 123, 169, 0.6);
+    border-radius: 10px;
 }

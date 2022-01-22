@@ -4,11 +4,13 @@
 }
 .dialogItem{
     padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
 }
 .message{
     display: grid;
     justify-items: center;
     padding: 10px;
+    background: rgba(0, 255, 247, 0.3);
 }
 .textarea{
     width: 100%;
@@ -18,6 +20,8 @@
     border: none;
     border-radius: 10px;
     margin-bottom: 10px;
+    background: rgba(0, 0, 0, 0.35);
+    color: #33CCFF;
 }
 .addMessage{
     margin-top:30px ;
@@ -30,4 +34,21 @@
     outline: none;
     border: none;
     border-radius: 5px;
+    background: rgba(0, 0, 0, 0.35);
+    color: #33CCFF;
+    font-size: 17px;
+    min-width: 120px;
+    min-height: 35px;
+}
+.button:hover{
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px #000;
+}
+.button:active{
+    background: rgba(0, 0, 0, 0.5);
+}
+.messageInfo{
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 10px;
 }

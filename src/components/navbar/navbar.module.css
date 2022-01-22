@@ -1,17 +1,25 @@
 .nav {
     grid-area: n;
-    background: rgb(19,14,93);
-    background: linear-gradient(197deg, rgba(19,14,93,1) 0%, rgba(0,51,153,1) 50%, rgba(19,14,93,1) 100%);
+    background: rgb(19, 14, 93);
+    background: linear-gradient(197deg, rgba(19, 14, 93, 1) 0%, rgba(0, 51, 153, 1) 50%, rgba(19, 14, 93, 1) 100%);
     padding: 20px;
 }
-.item{
-padding: 5px 0 5px 0;
+
+.item {
+    background: rgba(0, 0, 0, 0.35);
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    display: grid;
+    justify-items: center;
 }
+
 .link {
     text-decoration: none;
     color: #33CCFF;
 }
-.activeLink{
+
+.activeLink {
     text-decoration: none;
     color: #5785b2;
 }

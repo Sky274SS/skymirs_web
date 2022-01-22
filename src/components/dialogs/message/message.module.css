@@ -1,27 +1,38 @@
-.container{
+.container {
     display: grid;
     justify-items: center;
+    margin-bottom: 10px;
 }
-.dialog{
+
+.dialog {
     display: grid;
     width: 80%;
     align-items: center;
 }
-.selfDialog{
+
+.selfDialog {
     justify-items: end;
-    grid-template-columns: 1fr 50px;
+    grid-template-columns: 1fr 130px;
 }
-.friendDialog{
+
+.friendDialog {
     justify-items: start;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 130px 1fr;
 }
-.img{
+
+.img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
 }
-.dialogElement{
-display: grid;
+
+.dialogElement {
+    display: grid;
     align-items: center;
-    grid-template-columns: 50px 1fr;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 100px;
 }
