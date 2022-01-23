@@ -34,6 +34,10 @@ const Navbar = (props) => {
                     <NavFriends friends={props.config}/>
                 </NavLink>
             </div>
+            <div className={styles.item}>
+                <NavLink to="users" className={linkActive()}>
+                    Users</NavLink>
+            </div>
         </nav>
     );
 };
