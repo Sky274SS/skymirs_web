@@ -2,46 +2,46 @@ import React from 'react';
 import styles from "./my_posts.module.css";
 import Post from "./post/Post";
 
+class MyPosts extends React.Component{
 
-const MyPosts = (props) => {
-
-    const addPost = () => {
-        props.addNewPost()
+    addPost = () => {
+        this.props.addNewPost()
     }
-
-    function createNewPost(e) {
+    createNewPost = (e) => {
         let post = e.target.value
-        props.updateNewPost(post)
+        this.props.updateNewPost(post)
+        console.log(post)
     }
-
-    return (
-        <div className={styles.postsArea}>
-            <div className={styles.post}>
-                <div className={styles.myPosts}>My Posts</div>
-                <div>
+    render(){
+        return (
+            <div className={styles.postsArea}>
+                <div className={styles.post}>
+                    <div className={styles.myPosts}>My Posts</div>
+                    <div>
                     <textarea
                         className={styles.textarea}
-                        value={props.state.newPost}
-                        onChange={createNewPost}
+                        value={this.props.state.newPost}
+                        onChange={this.createNewPost}
                         placeholder={'Enter your text'}
                     />
+                    </div>
+                    <div>
+                        <button onClick={this.addPost} className={styles.button}>add post</button>
+                    </div>
                 </div>
-                <div>
-                    <button onClick={addPost} className={styles.button}>add post</button>
-                </div>
+                {this.props.state.postData.map((element, id) => {
+                    return (
+                        <Post postText={element.postText}
+                              likeCount={element.likeCount}
+                              time={element.time}
+                              key={id}
+                              id={id}
+                              addNewLike={this.props.addNewLike}/>
+                    )
+                })}
             </div>
-            {props.state.postData.map((element, id) => {
-                return (
-                    <Post postText={element.postText}
-                          likeCount={element.likeCount}
-                          time={element.time}
-                          key={id}
-                          id={id}
-                          addNewLike={props.addNewLike}/>
-                )
-            })}
-        </div>
-    );
-};
+        );
+    }
+}
 
 export default MyPosts;

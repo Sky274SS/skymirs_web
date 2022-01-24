@@ -1,64 +1,35 @@
 const SHOW_MORE = 'SHOW-MORE'
 const ON_CHANGE_FOLLOW = 'ON-CHANGE-FOLLOW'
+const SET_USERS = 'SET-USERS'
+const CHANGE_CURRENT_PAGE = 'CHANGE-CURRENT-PAGE'
+const GET_TOTAL_COUNT = 'GET-TOTAL-COUNT'
 
-const initialState = [
-    {
-        name: 'Sergey S',
-        location: 'Russia,Balashov',
-        info: 'I am God in this web!!!',
-        img: 'https://coolsen.ru/wp-content/uploads/2021/06/186-2.jpg',
-        isFollow: true
-    },
-    {
-        name: 'Alex',
-        location: 'Russia,Moscow',
-        info: 'Hello!!! How are you?',
-        img: 'https://a.d-cd.net/1a424f2s-960.jpg',
-        isFollow: true
-    },
-    {
-        name: 'Jack',
-        location: 'USA,California',
-        info: 'I live in California!!!',
-        img: 'https://pixelbox.ru/wp-content/uploads/2021/05/ava-vk-animal-91.jpg',
-        isFollow: true
-    },
-    {
-        name: 'Helen',
-        location: 'Russia,Balashov',
-        info: 'Get start!!!',
-        img: 'https://weblinks.ru/wp-content/uploads/2021/02/2727271934.jpg',
-        isFollow: true
-    },
-    {
-        name: 'Bob',
-        location: 'USA,New York',
-        info: 'FrontEnd developer, it is cool!!!',
-        img: 'https://vraki.net/sites/default/files/inline/images/3_370.jpg',
-        isFollow: false
-    },
-    {
-        name: 'Kevin',
-        location: 'German,Berlin',
-        info: 'I like ride a car!!!',
-        img: 'https://pixelbox.ru/wp-content/uploads/2021/03/ava-instagram-49.jpg',
-        isFollow: true
-    },
-    {
-        name: 'Linda',
-        location: 'Russia,Omsk',
-        info: 'Winter is my favorite season!!!',
-        img: 'https://bipbap.ru/wp-content/uploads/2021/07/1525256972_15.jpg',
-        isFollow: false
-    }
+const initialState = {
+    users: [],
+    currentPage: 1,
+    pageSize: 4,
+    totalUsersCount: 0
+}
 
-]
 const usersReducer = (state = initialState, action) => {
     switch (action.type) {
         case ON_CHANGE_FOLLOW:
-            let stateCopy = [...state]
-            stateCopy[action.id].isFollow =!action.state
+            let stateCopy = {...state}
+            stateCopy.users[action.id].isFollow = !action.state
             return stateCopy
+        case SET_USERS:
+            return {
+                ...state, users: [ ...action.users]
+            }
+        case CHANGE_CURRENT_PAGE:
+            return{
+                ...state, currentPage:action.currentPage
+            }
+        case GET_TOTAL_COUNT:
+            return{
+                ...state, totalUsersCount:action.totalCount
+            }
+
         default:
             return state
     }
@@ -66,4 +37,7 @@ const usersReducer = (state = initialState, action) => {
 }
 export default usersReducer
 
-export const onChangeFollowCreator =(id,state)=>({type: ON_CHANGE_FOLLOW,id:id,state:state})
+export const onChangeFollowCreator = (id, state) => ({type: ON_CHANGE_FOLLOW, id, state})
+export const setUsersCreator = users => ({type: SET_USERS, users})
+export const changeCurrentPageCreator = currentPage =>({type: CHANGE_CURRENT_PAGE,currentPage})
+export const getTotalCountCreator = totalCount =>({type: GET_TOTAL_COUNT,totalCount})

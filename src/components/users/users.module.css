@@ -30,3 +30,29 @@
     cursor: default;
     margin-bottom: 10px;
 }
+.pages{
+    padding: 13px 20px 13px 20px;
+    margin: 10px 0 10px 0;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+}
+.pages>span{
+    padding: 10px;
+    border-radius: 10px;
+    cursor:pointer;
+}
+.pages>span:hover{
+    background: rgba(0, 0, 0, 0.4);
+}
+.pages>span:active{
+    background: rgba(0, 0, 0, 0.9);
+}
+.pages>span:not(:last-child){
+    margin-right: 10px;
+
+}
+.pagesActive{
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5);
+}

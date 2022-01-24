@@ -35,7 +35,8 @@ let initialState = {
         {postText: 'I want become FrontEnd developer', likeCount: 345, time: '20.01.22'},
         {postText: 'Initial state reducer', likeCount: 1743, time: '21.01.22'},
         {postText: 'Five day without stop!!!, You may liked my posts', likeCount: 2481, time: '22.01.22'},
-        {postText: 'add users, you may follow me!!! many BLL change', likeCount: 3754, time: '23.01.22'}
+        {postText: 'add users, you may follow me!!! many BLL change', likeCount: 3754, time: '23.01.22'},
+        {postText: 'rest api isActive) self BackEnd and self DataBase', likeCount: 2745, time: '24.01.22'}
     ],
     newPost: ''
 }
