@@ -9,6 +9,12 @@ let initialState = {
         {id: 4, name: 'Bob', img: 'https://vraki.net/sites/default/files/inline/images/3_370.jpg'},
         {id: 5, name: 'Kevin', img: 'https://pixelbox.ru/wp-content/uploads/2021/03/ava-instagram-49.jpg'},
         {id: 6, name: 'Linda', img: 'https://bipbap.ru/wp-content/uploads/2021/07/1525256972_15.jpg'},
+        {
+            id: 7,
+            name: 'Christopher',
+            img: 'https://yt3.ggpht.com/ytc/AKedOLRUlYRwHhoXNXPLMxLiSzz7rhjOPD-QIsP_RxIs52s=s900-c-k-c0x00ffffff-no-rj'
+        },
+        {id: 8, name: 'Alice', img: 'https://pixelbox.ru/wp-content/uploads/2021/02/mult-ava-instagram-58.jpg'}
     ],
     messageData: [
         {message: 'Hi!', isFriend: true},

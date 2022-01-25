@@ -1,28 +1,10 @@
 import React from 'react';
 import User from "./user/User";
 import styles from './users.module.css'
-import * as axios from 'axios'
 
-class Users extends React.Component {
+const Users = (props)=>{
 
-    componentDidMount() {
-        axios.get(`http://localhost:8000/api/users?page=${this.props.currentPage}&limit=${this.props.pageSize}`).then(response => {
-            this.props.setUsers(response.data.users)
-            this.props.getTotalCount(response.data.count)
-        })
-    }
-
-    changeCurrentPage = (id) => {
-        this.props.changeCurrentPage(id)
-        axios.get(`http://localhost:8000/api/users?page=${id}&limit=${this.props.pageSize}`).then(response => {
-            this.props.setUsers(response.data.users)
-
-        })
-    }
-
-    render() {
-
-        let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize)
+        let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
         let pages = []
         for (let i = 1; i <= pagesCount; i++) {
             pages.push(i)
@@ -35,16 +17,16 @@ class Users extends React.Component {
                     {pages.map((page, id) => {
                         return (
                             <span
-                                className={this.props.currentPage === page? styles.pagesActive: undefined}
+                                className={props.currentPage === page? styles.pagesActive: undefined}
                                 key={id}
                                 onClick={() => {
-                                    this.changeCurrentPage(id + 1)
+                                    props.changeCurrentPage(id + 1)
                                 }}>{page}</span>
                         )
                     })}
                 </div>
                 <div>
-                    {this.props.state.map((user, id) => {
+                    {props.state.map((user, id) => {
                         return (
                             <User
                                 name={user.name}
@@ -52,7 +34,7 @@ class Users extends React.Component {
                                 info={user.info}
                                 img={user.img}
                                 isFollow={user.isFollow}
-                                onChangeFollow={this.props.onChangeFollow}
+                                onChangeFollow={props.onChangeFollow}
                                 id={id}
                                 key={id}/>
                         )
@@ -60,13 +42,13 @@ class Users extends React.Component {
 
                 </div>
                 <div>
-                    <button className={styles.button}>Show more</button>
+                    {/*<button className={styles.button}>Show more</button>*/}
                 </div>
             </div>
         );
 
     }
-}
+
 
 
 export default Users;

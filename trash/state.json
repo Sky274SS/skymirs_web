@@ -47,6 +47,20 @@
     "info": "Winter is my favorite season!!!",
     "img": "https://bipbap.ru/wp-content/uploads/2021/07/1525256972_15.jpg",
     "isFollow": false
+  },
+  {
+    "name": "Christopher",
+    "location": "Russia,Novosibirsk",
+    "info": "Search me!",
+    "img": "https://yt3.ggpht.com/ytc/AKedOLRUlYRwHhoXNXPLMxLiSzz7rhjOPD-QIsP_RxIs52s=s900-c-k-c0x00ffffff-no-rj",
+    "isFollow": false
+  },
+  {
+    "name": "Alice",
+    "location": "Russia,Krasnodar",
+    "info": "i am a new user!",
+    "img": "https://pixelbox.ru/wp-content/uploads/2021/02/mult-ava-instagram-58.jpg",
+    "isFollow": false
   }
 
 ]

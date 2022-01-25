@@ -30,13 +30,14 @@ let initialState = {
         info: 'На сегоднящний день FrontEnd разработка является одной из самых востребованных профессий в айти сфере. Фронтенд-разработчиками называют программистов, которые отвечают за создание такой внешней стороны (англ. front end) веб-сайтов. Это клиентская часть сайта, с которой пользователь непосредственно взаимодействует на своем компьютере или телефоне (клиенте).'
     },
     postData: [
-        {postText: 'Hello, I am using React-js', likeCount: 10, time: '18.01.22'},
-        {postText: 'Second day learn React-js', likeCount: 15, time: '19.01.22'},
-        {postText: 'I want become FrontEnd developer', likeCount: 345, time: '20.01.22'},
-        {postText: 'Initial state reducer', likeCount: 1743, time: '21.01.22'},
-        {postText: 'Five day without stop!!!, You may liked my posts', likeCount: 2481, time: '22.01.22'},
-        {postText: 'add users, you may follow me!!! many BLL change', likeCount: 3754, time: '23.01.22'},
-        {postText: 'rest api isActive) self BackEnd and self DataBase', likeCount: 2745, time: '24.01.22'}
+        {postText: 'Hello, I am using React-js', likeCount: 194, time: '18.01.22'},
+        {postText: 'Second day learn React-js', likeCount: 47, time: '19.01.22'},
+        {postText: 'I want become FrontEnd developer', likeCount: 6354, time: '20.01.22'},
+        {postText: 'Initial state reducer', likeCount: 143, time: '21.01.22'},
+        {postText: 'Five day without stop!!!, You may liked my posts', likeCount: 481, time: '22.01.22'},
+        {postText: 'Add users, you may follow me!!! Many BLL change', likeCount: 754, time: '23.01.22'},
+        {postText: 'Rest api isActive) Self BackEnd and self DataBase', likeCount: 2745, time: '24.01.22'},
+        {postText: 'Preloader is work!!! New container components', likeCount: 572, time: '25.01.22'},
     ],
     newPost: ''
 }
