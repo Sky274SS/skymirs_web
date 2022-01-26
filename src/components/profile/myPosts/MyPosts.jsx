@@ -2,46 +2,45 @@ import React from 'react';
 import styles from "./my_posts.module.css";
 import Post from "./post/Post";
 
-class MyPosts extends React.Component{
+const MyPosts = (props) => {
 
-    addPost = () => {
-        this.props.addNewPost()
+    const addPost = () => {
+        props.addPost()
     }
-    createNewPost = (e) => {
+    const createNewPost = (e) => {
         let post = e.target.value
-        this.props.updateNewPost(post)
-        console.log(post)
+        props.updateNewPostText(post)
     }
-    render(){
-        return (
-            <div className={styles.postsArea}>
-                <div className={styles.post}>
-                    <div className={styles.myPosts}>My Posts</div>
-                    <div>
+
+    return (
+        <div className={styles.postsArea}>
+            <div className={styles.post}>
+                <div className={styles.myPosts}>My Posts</div>
+                <div>
                     <textarea
                         className={styles.textarea}
-                        value={this.props.state.newPost}
-                        onChange={this.createNewPost}
+                        value={props.newPost}
+                        onChange={createNewPost}
                         placeholder={'Enter your text'}
                     />
-                    </div>
-                    <div>
-                        <button onClick={this.addPost} className={styles.button}>add post</button>
-                    </div>
                 </div>
-                {this.props.state.postData.map((element, id) => {
-                    return (
-                        <Post postText={element.postText}
-                              likeCount={element.likeCount}
-                              time={element.time}
-                              key={id}
-                              id={id}
-                              addNewLike={this.props.addNewLike}/>
-                    )
-                })}
+                <div>
+                    <button onClick={addPost} className={styles.button}>add post</button>
+                </div>
             </div>
-        );
-    }
-}
+            {props.postData.map((element, id) => {
+                return (
+                    <Post postText={element.postText}
+                          likeCount={element.likeCount}
+                          time={element.time}
+                          key={id}
+                          id={id}
+                          addNewLike={props.addLike}/>
+                )
+            })}
+                </div>)
 
-export default MyPosts;
+            }
+
+
+            export default MyPosts;

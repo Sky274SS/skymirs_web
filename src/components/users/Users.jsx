@@ -34,9 +34,11 @@ const Users = (props)=>{
                                 info={user.info}
                                 img={user.img}
                                 isFollow={user.isFollow}
+                                gender={user.gender}
                                 onChangeFollow={props.onChangeFollow}
                                 id={id}
-                                key={id}/>
+                                key={id}
+                            />
                         )
                     })}
 

@@ -1,6 +1,9 @@
 const ADD_POST = 'ADD-POST'
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 const ADD_LIKE = 'ADD-LIKE'
+const GET_PROFILE = 'GET-PROFILE'
+const TOGGLE_IS_FETCHING_PROFILE = 'TOGGLE-IS-FETCHING-PROFILE'
+
 
 const time = new Date()
 const currentTime = () => {
@@ -23,12 +26,7 @@ const currentTime = () => {
     return `${date}.${month}.${year}`
 }
 let initialState = {
-    profileInfo: {
-        name: 'Сергей Скаймирс',
-        year: '22 года',
-        work: 'FrontEnd разработчик',
-        info: 'На сегоднящний день FrontEnd разработка является одной из самых востребованных профессий в айти сфере. Фронтенд-разработчиками называют программистов, которые отвечают за создание такой внешней стороны (англ. front end) веб-сайтов. Это клиентская часть сайта, с которой пользователь непосредственно взаимодействует на своем компьютере или телефоне (клиенте).'
-    },
+
     postData: [
         {postText: 'Hello, I am using React-js', likeCount: 194, time: '18.01.22'},
         {postText: 'Second day learn React-js', likeCount: 47, time: '19.01.22'},
@@ -38,8 +36,11 @@ let initialState = {
         {postText: 'Add users, you may follow me!!! Many BLL change', likeCount: 754, time: '23.01.22'},
         {postText: 'Rest api isActive) Self BackEnd and self DataBase', likeCount: 2745, time: '24.01.22'},
         {postText: 'Preloader is work!!! New container components', likeCount: 572, time: '25.01.22'},
+        {postText: 'Opening users profile!!!', likeCount: 1572, time: '26.01.22'}
     ],
-    newPost: ''
+    profile:null,
+    newPost: '',
+    isFetchingProfile: false,
 }
 
 const profileReducer = (state = initialState, action) => {
@@ -60,6 +61,14 @@ const profileReducer = (state = initialState, action) => {
             stateCopy.postData[action.id].likeCount++
             return stateCopy
         }
+        case GET_PROFILE:
+            return {
+            ...state, profile:action.profile
+            }
+        case TOGGLE_IS_FETCHING_PROFILE:
+            return {
+                ...state, isFetchingProfile: action.isFetchingProfile
+            }
         default:
             return state
     }
@@ -67,6 +76,8 @@ const profileReducer = (state = initialState, action) => {
 
 export default profileReducer
 
-export const addPostCreater = () => ({type: ADD_POST})
-export const updateNewPostTextCreater = post => ({type: UPDATE_NEW_POST_TEXT, postText: post})
-export const addLikeCreator = id => ({type: ADD_LIKE, id: id})
+export const addPost = () => ({type: ADD_POST})
+export const updateNewPostText = post => ({type: UPDATE_NEW_POST_TEXT, postText: post})
+export const addLike = id => ({type: ADD_LIKE, id: id})
+export const getProfile = profile => ({type:GET_PROFILE,profile})
+export const toggleIsFetchingProfile = isFetchingProfile => ({type: TOGGLE_IS_FETCHING_PROFILE, isFetchingProfile})

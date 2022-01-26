@@ -4,13 +4,15 @@ const SET_USERS = 'SET-USERS'
 const CHANGE_CURRENT_PAGE = 'CHANGE-CURRENT-PAGE'
 const GET_TOTAL_COUNT = 'GET-TOTAL-COUNT'
 const TOGGLE_IS_FETCHING = 'TOGGLE-IS-FETCHING'
+const CHANGE_CURRENT_USER = 'CHANGE-CURRENT-USER'
 
 const initialState = {
     users: [],
     currentPage: 1,
     pageSize: 3,
     totalUsersCount: 0,
-    isFetching: false
+    isFetching: false,
+    currentUser: 0
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -44,8 +46,8 @@ const usersReducer = (state = initialState, action) => {
 }
 export default usersReducer
 
-export const onChangeFollowCreator = (id, state) => ({type: ON_CHANGE_FOLLOW, id, state})
-export const setUsersCreator = users => ({type: SET_USERS, users})
-export const changeCurrentPageCreator = currentPage => ({type: CHANGE_CURRENT_PAGE, currentPage})
-export const getTotalCountCreator = totalCount => ({type: GET_TOTAL_COUNT, totalCount})
-export const toggleIsFetchingCreator = isFetching => ({type: TOGGLE_IS_FETCHING, isFetching})
+export const onChangeFollow = (id, state) => ({type: ON_CHANGE_FOLLOW, id, state})
+export const setUsers = users => ({type: SET_USERS, users})
+export const changeCurrentPage = currentPage => ({type: CHANGE_CURRENT_PAGE, currentPage})
+export const getTotalCount = totalCount => ({type: GET_TOTAL_COUNT, totalCount})
+export const toggleIsFetching = isFetching => ({type: TOGGLE_IS_FETCHING, isFetching})

@@ -1,10 +1,10 @@
 import {connect} from "react-redux";
 import Users from "./Users";
 import {
-    changeCurrentPageCreator,
-    getTotalCountCreator,
-    onChangeFollowCreator,
-    setUsersCreator, toggleIsFetchingCreator
+    changeCurrentPage, changeCurrentUser,
+    getTotalCount,
+    onChangeFollow,
+    setUsers, toggleIsFetching
 } from "../../redux/usersReduser";
 import React from "react";
 import * as axios from "axios";
@@ -14,7 +14,7 @@ class UsersContainer extends React.Component {
 
     componentDidMount() {
         this.props.toggleIsFetching(true)
-        axios.get(`http://localhost:8000/api/users?page=${this.props.currentPage}&limit=${this.props.pageSize}`)
+        axios.get(`https://otdelka-krd.ru/api/users?page=${this.props.currentPage}&limit=${this.props.pageSize}`)
             .then(response => {
                 this.props.toggleIsFetching(false)
                 this.props.setUsers(response.data.users)
@@ -25,7 +25,7 @@ class UsersContainer extends React.Component {
     changeCurrentPage = (id) => {
         this.props.changeCurrentPage(id)
         this.props.toggleIsFetching(true)
-        axios.get(`http://localhost:8000/api/users?page=${id}&limit=${this.props.pageSize}`)
+        axios.get(`https://otdelka-krd.ru/api/users?page=${id}&limit=${this.props.pageSize}`)
             .then(response => {
                 this.props.toggleIsFetching(false)
                 this.props.setUsers(response.data.users)
@@ -57,19 +57,12 @@ const mapStateToProps = (state) => {
         currentPage: state.usersPage.currentPage,
         totalUsersCount: state.usersPage.totalUsersCount,
         pageSize: state.usersPage.pageSize,
-        isFetching: state.usersPage.isFetching
+        isFetching: state.usersPage.isFetching,
 
     }
 }
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onChangeFollow: (id, state) => dispatch(onChangeFollowCreator(id, state)),
-        setUsers: users => dispatch(setUsersCreator(users)),
-        changeCurrentPage: currentPage => dispatch(changeCurrentPageCreator(currentPage)),
-        getTotalCount: totalCount => dispatch(getTotalCountCreator(totalCount)),
-        toggleIsFetching: isFetching => dispatch(toggleIsFetchingCreator(isFetching))
-    }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
+export default connect(mapStateToProps,
+    {onChangeFollow, setUsers, changeCurrentPage, getTotalCount, toggleIsFetching})
+(UsersContainer)
 

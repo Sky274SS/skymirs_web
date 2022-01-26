@@ -1,14 +1,25 @@
 import React from 'react';
 import styles from './profile.module.css'
-import MyPostsContainer from "./myPosts/MyPostsContainer";
-import ProfileInfoContainer from "./profileInfo/ProfileInfoContainer";
+import ProfileInfo from "./profileInfo/ProfileInfo";
+import MyPosts from "./myPosts/MyPosts";
+import Preloader from "../common/preloader/Preloader";
+
+
 
 const Profile = (props) => {
     return (
-        <div>
-            <ProfileInfoContainer/>
-            <MyPostsContainer/>
-        </div>
+        <>
+            {props.isFetchingProfile? <Preloader/>: <div>
+                {!props.state ? <div/> : <ProfileInfo state={props.state}/>}
+                <MyPosts postData={props.postData}
+                         newPost={props.newPost}
+                         addLike={props.addLike}
+                         updateNewPostText={props.updateNewPostText}
+                         addPost={props.addPost}
+                />
+            </div>}
+
+        </>
     );
 };
 

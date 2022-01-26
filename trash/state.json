@@ -1,66 +1,133 @@
+//users
 [
   {
     "name": "Sergey S",
     "location": "Russia,Balashov",
     "info": "I am God in this web!!!",
     "img": "https://coolsen.ru/wp-content/uploads/2021/06/186-2.jpg",
-    "isFollow": true
+    "isFollow": true,
+    "gender": "male"
   },
   {
     "name": "Alex",
     "location": "Russia,Moscow",
     "info": "Hello!!! How are you?",
     "img": "https://a.d-cd.net/1a424f2s-960.jpg",
-    "isFollow": true
+    "isFollow": true,
+    "gender": "male"
+  },
+  {
+    "name": "Candice",
+    "location": "England,London",
+    "info": "What do you think about me?",
+    "isFollow": true,
+    "gender": "female"
   },
   {
     "name": "Jack",
     "location": "USA,California",
     "info": "I live in California!!!",
     "img": "https://pixelbox.ru/wp-content/uploads/2021/05/ava-vk-animal-91.jpg",
-    "isFollow": true
+    "isFollow": true,
+    "gender": "male"
   },
   {
     "name": "Helen",
     "location": "Russia,Balashov",
     "info": "Get start!!!",
     "img": "https://weblinks.ru/wp-content/uploads/2021/02/2727271934.jpg",
-    "isFollow": true
+    "isFollow": true,
+    "gender": "female"
   },
   {
     "name": "Bob",
     "location": "USA,New York",
     "info": "FrontEnd developer, it is cool!!!",
     "img": "https://vraki.net/sites/default/files/inline/images/3_370.jpg",
-    "isFollow": false
+    "isFollow": false,
+    "gender": "male"
   },
   {
     "name": "Kevin",
     "location": "German,Berlin",
     "info": "I like ride a car!!!",
     "img": "https://pixelbox.ru/wp-content/uploads/2021/03/ava-instagram-49.jpg",
-    "isFollow": true
+    "isFollow": true,
+    "gender": "male"
+  },
+  {
+    "name": "William",
+    "location": "England,London",
+    "info": "London is the capital of Great Britain!",
+    "isFollow": true,
+    "gender": "male"
   },
   {
     "name": "Linda",
     "location": "Russia,Omsk",
     "info": "Winter is my favorite season!!!",
     "img": "https://bipbap.ru/wp-content/uploads/2021/07/1525256972_15.jpg",
-    "isFollow": false
+    "isFollow": false,
+    "gender": "female"
   },
   {
     "name": "Christopher",
     "location": "Russia,Novosibirsk",
     "info": "Search me!",
     "img": "https://yt3.ggpht.com/ytc/AKedOLRUlYRwHhoXNXPLMxLiSzz7rhjOPD-QIsP_RxIs52s=s900-c-k-c0x00ffffff-no-rj",
-    "isFollow": false
+    "isFollow": false,
+    "gender": "male"
   },
   {
     "name": "Alice",
     "location": "Russia,Krasnodar",
     "info": "i am a new user!",
     "img": "https://pixelbox.ru/wp-content/uploads/2021/02/mult-ava-instagram-58.jpg",
-    "isFollow": false
+    "isFollow": false,
+    "gender": "female"
+  },
+  {
+    "name": "Viktor",
+    "location": "Russia,Balashov",
+    "info": "Hello i am using SKYMIRS WEB!!!",
+    "img": "https://www.china-moto.ru/forum/uploads/monthly_2017_01/NGBeh40AVew.jpg.17c1305312205046c60ff92e9d29c2e9.jpg",
+    "isFollow": true,
+    "gender": "male"
   }
+],
+//profile
+[
+{
+"id": 0,
+"firstName": "Сергей",
+"secondName": "Скаймирс",
+"birthday": "02.05.1999",
+"city": "Балашов",
+"workPlace": "Facebook",
+"img": "https://coolsen.ru/wp-content/uploads/2021/06/186-2.jpg",
+"bgImg": "https://i08.fotocdn.net/s111/b4d4df3604976f85/public_pin_l/2490591478.jpg",
+"status": "Всем привет!!! Рад всех видеть, я являюсь создателем этой социальной сети, по всем вопросам в лс!",
+"contacts": {
+"inst": "skymirs",
+"mail": "kadetka274@gmail.com",
+"number": "8-918-628-09-77"
+}
+},
+{
+"id": 1,
+"firstName": "Виктор",
+"secondName": "Хламоход",
+"birthday": "15.10.1999",
+"city": "Балашов",
+"workPlace": "Ресторан 'Угли-Угли' ",
+"img": "https://www.china-moto.ru/forum/uploads/monthly_2017_01/NGBeh40AVew.jpg.17c1305312205046c60ff92e9d29c2e9.jpg",
+"bgImg": "https://i08.fotocdn.net/s111/b4d4df3604976f85/public_pin_l/2490591478.jpg",
+"status": "Я выставлю их на мороз, чтобы не замерзли",
+"contacts": {
+"inst": "wolf_229",
+"mail": "wolf_229",
+"number": "8-964-943-84-93"
+}
+}
 
 ]
