@@ -1,0 +1,70 @@
+.container{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    width: 1440px;
+    margin: 0 auto;
+    height: 100vh;
+    background: rgb(19,14,93);
+    background: linear-gradient(197deg, rgba(19,14,93,1) 0%, rgba(0,51,153,1) 50%, rgba(19,14,93,1) 100%);
+    color: #33CCFF;
+}
+.login{
+    display: grid;
+    justify-items: center;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 25px;
+    min-width: 600px;
+    padding: 40px 10px 40px 10px;
+}
+.title{
+    margin: 10px 0 20px 0;
+    font-weight: bold;
+    font-size: 25px;
+    text-shadow: 0 5px 10px #000;
+}
+.inputContainer{
+    display: grid;
+    padding: 10px;
+}
+.input{
+    margin-bottom: 10px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.35);
+    color: #33CCFF;
+    padding: 10px;
+    font-size: 18px;
+    min-height: 25px;
+}
+.button{
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.35);
+    color: #33CCFF;
+    font-size: 17px;
+    min-width: 120px;
+    min-height: 35px;
+}
+.button:not(:last-child){
+    margin-right: 30px;
+}
+.button:hover{
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px #000;
+}
+.button:active{
+    background: rgba(0, 0, 0, 0.5);
+}
+.response{
+    margin-top:10px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    min-width: 450px;
+    text-align: center;
+}

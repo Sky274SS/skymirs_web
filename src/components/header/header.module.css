@@ -4,7 +4,7 @@
     background: rgb(19,14,93);
     background: linear-gradient(197deg, rgba(19,14,93,1) 0%, rgba(0,51,153,1) 50%, rgba(19,14,93,1) 100%);
     align-items: center;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 100px 1fr 100px;
 }
 
 .logo_img {
@@ -22,4 +22,21 @@
     color:#33CCFF;
     text-shadow: 0 0 15px black;
     cursor: default;
+}
+
+
+
+.exit{
+    border-radius: 10px;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.35);
+    text-decoration: none;
+    color: #33CCFF;
+}
+.exit:hover{
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px #000;
+}
+.exit:active{
+    background: rgba(0, 0, 0, 0.5);
 }

@@ -5,13 +5,17 @@ import store from "./redux/reduxStore";
 import ReactDOM from "react-dom";
 import App from "./App";
 import {Provider} from "react-redux";
+import LoginContainer from "./login/LoginContainer";
+
+
 
 
 let rerenderTree = (state) => {
     ReactDOM.render(
         <React.StrictMode>
             <Provider store={store}>
-            <App/>
+                {store.getState().auth.isAuth? <App/>:
+                    <LoginContainer/>}
             </Provider>
         </React.StrictMode>,
         document.getElementById('root')
