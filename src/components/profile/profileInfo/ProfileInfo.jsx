@@ -27,9 +27,9 @@ const ProfileInfo = (props) => {
                 <div className={styles.description}>
                     <div>{`Статус: ${props.state.status}`}</div>
                     <div>Контакты:
-                        <div>{`Инстаграм: ${props.state.contacts.inst}`}</div>
-                        <div>{`Электронная почта: ${props.state.contacts.mail}`}</div>
-                        <div>{`Номер телефона: ${props.state.contacts.number}`}</div>
+                        {/*<div>{`Инстаграм: ${props.state.contacts.inst}`}</div>*/}
+                        {/*<div>{`Электронная почта: ${props.state.contacts.mail}`}</div>*/}
+                        {/*<div>{`Номер телефона: ${props.state.contacts.number}`}</div>*/}
                     </div>
                 </div>
             </div>

@@ -12,9 +12,9 @@ const User = (props) => {
         <div className={styles.container}>
             <div className={styles.avaContainer}>
                 <div>
-                    <NavLink to={`/profile/${props.id}`}>
+                    <NavLink to={`/profile/all/${props.id}`}>
                     <img
-                        src={props.img?props.img:props.gender==='male'?'/male.jpg':'/female.jpg'}
+                        src={props.img}
                         alt="ava"
                         className={styles.img}/></NavLink>
                 </div>

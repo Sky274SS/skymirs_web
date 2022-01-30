@@ -3,7 +3,6 @@ import User from "./user/User";
 import styles from './users.module.css'
 
 const Users = (props)=>{
-
         let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
         let pages = []
         for (let i = 1; i <= pagesCount; i++) {
@@ -29,12 +28,11 @@ const Users = (props)=>{
                     {props.state.map((user, id) => {
                         return (
                             <User
-                                name={user.name}
-                                location={user.location}
-                                info={user.info}
+                                name={`${user.firstName} ${user.secondName}`}
+                                location={user.city}
+                                info={user.status}
                                 img={user.img}
                                 isFollow={user.isFollow}
-                                gender={user.gender}
                                 onChangeFollow={props.onChangeFollow}
                                 id={id}
                                 key={id}

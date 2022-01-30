@@ -34,7 +34,8 @@ const Dialogs = (props) => {
                             <Message
                                 message={element.message}
                                 isFriend={element.isFriend}
-                                key={id}/>
+                                key={id}
+                            img={props.avaImg}/>
                         )
                     })}
                 </div>

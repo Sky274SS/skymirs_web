@@ -10,7 +10,7 @@ const Navbar = (props) => {
     return (
         <nav className={styles.nav}>
             <div className={styles.item}>
-                <NavLink to="profile" className={linkActive()}>
+                <NavLink to="profile/me" className={linkActive()}>
                     Profile</NavLink>
             </div>
             <div className={styles.item}>

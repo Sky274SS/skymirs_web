@@ -5,7 +5,8 @@ import {connect} from "react-redux";
 
 const mapStatechToProps = (state) => {
     return {
-        state: state.dialogs
+        state: state.dialogs,
+        avaImg:state.profilePage.profile.img
     }
 }
 const mapDispatchToProps = (dispatch) => {

@@ -17,7 +17,7 @@ const Header = (props) => {
             </div>
             <div>
                 <NavLink className={styles.exit} to={'/'} onClick={()=> {
-                    props.setLogin(false)
+                    props.logout()
                 }}>Exit</NavLink>
 
             </div>

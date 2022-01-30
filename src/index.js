@@ -14,7 +14,7 @@ let rerenderTree = (state) => {
     ReactDOM.render(
         <React.StrictMode>
             <Provider store={store}>
-                {store.getState().auth.isAuth? <App/>:
+                {localStorage.userData? <App/>:
                     <LoginContainer/>}
             </Provider>
         </React.StrictMode>,

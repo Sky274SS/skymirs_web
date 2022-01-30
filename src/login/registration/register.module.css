@@ -1,0 +1,87 @@
+.modal{
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0, 0.5);
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+.modalBody {
+    padding: 30px;
+    background: rgb(19,14,93);
+    background: linear-gradient(197deg, rgba(19,14,93,1) 0%, rgba(0,51,153,1) 50%, rgba(19,14,93,1) 100%);
+    display: grid;
+grid-template-rows: 50px 1fr;
+
+}
+.modalBodyTitle{
+
+}
+.formContainer{
+    display: grid;
+    grid-template-columns: auto;
+    justify-items: center;
+    align-items: center;
+
+}
+.formContainer>label{
+
+}
+.button{
+    padding: 5px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.35);
+    color: #33CCFF;
+    font-size: 17px;
+    min-width: 100px;
+    min-height: 35px;
+    margin: 10px 0 10px 0;
+}
+.button:hover{
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px #000;
+}
+.button:active{
+    background: rgba(0, 0, 0, 0.5);
+}
+.contact{
+    padding: 10px 30px 10px 30px;
+    display: grid;
+}
+.contact>label>input{
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.35);
+    color: #33CCFF;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+.formContainer>label>input{
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.35);
+    color: #33CCFF;
+    margin-bottom: 5px;
+    font-size: 17px;
+}
+.formContainer>label>textarea{
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.35);
+    color: #33CCFF;
+    margin-bottom: 5px;
+    font-size: 15px;
+}

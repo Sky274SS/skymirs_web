@@ -2,9 +2,10 @@ import React from "react";
 import * as axios from "axios";
 import Login from "./Login";
 import {connect} from "react-redux";
-import {setLogin, updateEmail, updateInfoMessage, updatePassword} from "../redux/authReducer";
+import {setLogin, setToken, setUserId, updateEmail, updateInfoMessage, updatePassword} from "../redux/authReducer";
 
 class LoginContainer extends React.Component {
+
 
     render() {
         return <Login
@@ -25,4 +26,4 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps,
-    {updateEmail,updatePassword,updateInfoMessage,setLogin})(LoginContainer)
+    {updateEmail, updatePassword, updateInfoMessage, setLogin})(LoginContainer)

@@ -1,12 +1,16 @@
 import React from 'react';
 import styles from "./my_posts.module.css";
 import Post from "./post/Post";
+import * as axios from "axios";
 
 const MyPosts = (props) => {
+let data=JSON.parse(localStorage.getItem('userData'))
 
-    const addPost = () => {
-        props.addPost()
+    const addPost = ()=>{
+
+        props.addPost(props.newPost)
     }
+
     const createNewPost = (e) => {
         let post = e.target.value
         props.updateNewPostText(post)
@@ -32,10 +36,12 @@ const MyPosts = (props) => {
                 return (
                     <Post postText={element.postText}
                           likeCount={element.likeCount}
-                          time={element.time}
+                          time={element.date}
                           key={id}
                           id={id}
-                          addNewLike={props.addLike}/>
+                          addNewLike={props.addLike}
+                          img={props.profile.img}
+                    />
                 )
             })}
                 </div>)

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./post.module.css";
 
-const Post = ({postText,likeCount,time,id,addNewLike}) => {
+const Post = ({postText,likeCount,time,id,addNewLike,img}) => {
 
     const onLike = ()=>{
         addNewLike(id)
@@ -9,7 +9,7 @@ const Post = ({postText,likeCount,time,id,addNewLike}) => {
 
     return (
         <div className={styles.post}>
-                <img src="https://coolsen.ru/wp-content/uploads/2021/06/186-2.jpg"
+                <img src={img?img:''}
                      alt="ava"
                      className={styles.avaMicro}/>
                 <div className={styles.postText}>

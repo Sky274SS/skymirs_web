@@ -14,10 +14,10 @@ class UsersContainer extends React.Component {
 
     componentDidMount() {
         this.props.toggleIsFetching(true)
-        axios.get(`https://otdelka-krd.ru/api/users?page=${this.props.currentPage}&limit=${this.props.pageSize}`)
+        axios.get(`/api/profile/all?page=${this.props.currentPage}&limit=${this.props.pageSize}`)
             .then(response => {
                 this.props.toggleIsFetching(false)
-                this.props.setUsers(response.data.users)
+                this.props.setUsers(response.data.profile)
                 this.props.getTotalCount(response.data.count)
             })
     }
@@ -25,10 +25,10 @@ class UsersContainer extends React.Component {
     changeCurrentPage = (id) => {
         this.props.changeCurrentPage(id)
         this.props.toggleIsFetching(true)
-        axios.get(`https://otdelka-krd.ru/api/users?page=${id}&limit=${this.props.pageSize}`)
+        axios.get(`/api/profile/all?page=${id}&limit=${this.props.pageSize}`)
             .then(response => {
                 this.props.toggleIsFetching(false)
-                this.props.setUsers(response.data.users)
+                this.props.setUsers(response.data.profile)
 
             })
     }

@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
 import styles from './login.module.css'
 import * as axios from "axios";
+import Register from "./registration/Register";
 
 const Login = (props) => {
+
+    const [isRegister,setIsRegister] = useState(false)
 
     const updateEmail = (e)=>{
         let newEmail = e.target.value
@@ -13,15 +16,16 @@ const Login = (props) => {
         props.updatePassword(newPassword)
     }
 
-    const onRegister = () => {
-        axios.post('/api/auth/register', {email:props.state.currentEmail, password:props.state.currentPassword})
-            .then(response => {
-                console.log(response)
-                props.updateInfoMessage('Вы успешно зарегистрированы')
-            })
-            .catch(error => {
-                props.updateInfoMessage('Неверные данные для регистрации, повторите попытку')
-            });
+    const onRegister = (state) => {
+        // axios.post('/api/auth/register', {email:props.state.currentEmail, password:props.state.currentPassword,})
+        //     .then(response => {
+        //         console.log(response)
+        //         props.updateInfoMessage('Вы успешно зарегистрированы')
+        //     })
+        //     .catch(error => {
+        //         props.updateInfoMessage('Неверные данные для регистрации, повторите попытку')
+        //     });
+        setIsRegister(!state)
     }
 
     const onLogin = () => {
@@ -29,7 +33,10 @@ const Login = (props) => {
             .then(response => {
                 console.log(response)
                 props.setLogin(true)
-                props.updateInfoMessage('Введите логи и пароль!')
+                localStorage.setItem('userData', JSON.stringify({
+                    userId: response.data.userId, token: response.data.token
+                }))
+                props.updateInfoMessage('Введите логин и пароль')
             })
             .catch((e) => {
                 props.updateInfoMessage('Неверные данные для авторизации, повторите попытку')
@@ -38,6 +45,7 @@ const Login = (props) => {
 
     return (
         <div className={styles.container}>
+            {isRegister&&<Register isRegister={isRegister} onRegister={onRegister}/>}
             <div className={styles.login}>
             <div className={styles.title}>SKYMIRS WEB</div>
             <div className={styles.response}>
@@ -49,7 +57,7 @@ const Login = (props) => {
             </div>
             <div className={styles.buttonContainer}>
                 <button className={styles.button} onClick={onLogin}>Войти</button>
-                <button className={styles.button} onClick={onRegister}>Зарегистрироваться</button>
+                <button className={styles.button} onClick={()=>{onRegister(isRegister)}}>Зарегистрироваться</button>
             </div>
 
 

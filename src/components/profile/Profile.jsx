@@ -16,6 +16,7 @@ const Profile = (props) => {
                          addLike={props.addLike}
                          updateNewPostText={props.updateNewPostText}
                          addPost={props.addPost}
+                         profile={props.state}
                 />
             </div>}
 
