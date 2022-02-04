@@ -1,3 +1,5 @@
+import {usersAPI} from "../api/api";
+
 const SHOW_MORE = 'SHOW-MORE'
 const ON_CHANGE_FOLLOW = 'ON-CHANGE-FOLLOW'
 const SET_USERS = 'SET-USERS'
@@ -51,3 +53,17 @@ export const setUsers = users => ({type: SET_USERS, users})
 export const changeCurrentPage = currentPage => ({type: CHANGE_CURRENT_PAGE, currentPage})
 export const getTotalCount = totalCount => ({type: GET_TOTAL_COUNT, totalCount})
 export const toggleIsFetching = isFetching => ({type: TOGGLE_IS_FETCHING, isFetching})
+
+
+export const getUsers = (currentPage,pageSize) =>{
+
+    return(dispatch) =>{
+        dispatch(toggleIsFetching(true))
+        usersAPI.getUsers(currentPage,pageSize)
+            .then(data => {
+                dispatch(toggleIsFetching(false))
+                dispatch(setUsers(data.profile))
+                dispatch(getTotalCount(data.count))
+            })
+    }
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './user.module.css'
-import {NavLink, useParams} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 const User = (props) => {
 
@@ -14,7 +14,7 @@ const User = (props) => {
                 <div>
                     <NavLink to={`/profile/all/${props.id}`}>
                     <img
-                        src={props.img}
+                        src={props.img?props.img:'male.jpg'}
                         alt="ava"
                         className={styles.img}/></NavLink>
                 </div>

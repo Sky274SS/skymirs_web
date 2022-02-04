@@ -1,36 +1,21 @@
 import {connect} from "react-redux";
 import Users from "./Users";
 import {
-    changeCurrentPage, changeCurrentUser,
-    getTotalCount,
-    onChangeFollow,
-    setUsers, toggleIsFetching
+    changeCurrentPage,
+    getUsers,
+    onChangeFollow
 } from "../../redux/usersReduser";
 import React from "react";
-import * as axios from "axios";
 import Preloader from "../common/preloader/Preloader";
 
 class UsersContainer extends React.Component {
 
     componentDidMount() {
-        this.props.toggleIsFetching(true)
-        axios.get(`/api/profile/all?page=${this.props.currentPage}&limit=${this.props.pageSize}`)
-            .then(response => {
-                this.props.toggleIsFetching(false)
-                this.props.setUsers(response.data.profile)
-                this.props.getTotalCount(response.data.count)
-            })
+       this.props.getUsers(this.props.currentPage,this.props.pageSize)
     }
 
     changeCurrentPage = (id) => {
-        this.props.changeCurrentPage(id)
-        this.props.toggleIsFetching(true)
-        axios.get(`/api/profile/all?page=${id}&limit=${this.props.pageSize}`)
-            .then(response => {
-                this.props.toggleIsFetching(false)
-                this.props.setUsers(response.data.profile)
-
-            })
+        this.props.getUsers(id,this.props.pageSize)
     }
 
     render() {
@@ -63,6 +48,6 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps,
-    {onChangeFollow, setUsers, changeCurrentPage, getTotalCount, toggleIsFetching})
+    {onChangeFollow, changeCurrentPage, getUsers })
 (UsersContainer)
 

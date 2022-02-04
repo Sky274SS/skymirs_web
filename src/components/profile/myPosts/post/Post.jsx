@@ -2,9 +2,13 @@ import React from 'react';
 import styles from "./post.module.css";
 
 const Post = ({postText,likeCount,time,id,addNewLike,img}) => {
-
+    window.time=time
     const onLike = ()=>{
         addNewLike(id)
+    }
+    const dateTransform = (date) =>{
+        return `${date.slice(8,10)}.${date.slice(5,7)}.${date.slice(0,4)}`
+
     }
 
     return (
@@ -24,7 +28,7 @@ const Post = ({postText,likeCount,time,id,addNewLike,img}) => {
                          onClick={onLike}/>
                 </div>
                 <div className={styles.postTime}>
-                    {time}
+                    {dateTransform(time)}
                 </div>
             </div>
 

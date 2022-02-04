@@ -1,8 +1,10 @@
+import {ProfileAPI} from "../api/api";
+
 const ADD_POST = 'ADD-POST'
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 const ADD_LIKE = 'ADD-LIKE'
 const GET_PROFILE = 'GET-PROFILE'
-const GET_ME_POSTS ='GET-ME-POSTS'
+const GET_ME_POSTS = 'GET-ME-POSTS'
 const TOGGLE_IS_FETCHING_PROFILE = 'TOGGLE-IS-FETCHING-PROFILE'
 
 
@@ -29,7 +31,7 @@ const currentTime = () => {
 let initialState = {
 
     posts: [],
-    profile:null,
+    profile: null,
     newPost: '',
     isFetchingProfile: false,
 }
@@ -54,12 +56,12 @@ const profileReducer = (state = initialState, action) => {
         }
         case GET_PROFILE:
             return {
-            ...state, profile:action.profile
+                ...state, profile: action.profile
             }
         case GET_ME_POSTS:
             return {
-                ...state,posts:action.posts
-        }
+                ...state, posts: action.posts
+            }
         case TOGGLE_IS_FETCHING_PROFILE:
             return {
                 ...state, isFetchingProfile: action.isFetchingProfile
@@ -74,6 +76,33 @@ export default profileReducer
 export const addPost = () => ({type: ADD_POST})
 export const updateNewPostText = post => ({type: UPDATE_NEW_POST_TEXT, postText: post})
 export const addLike = id => ({type: ADD_LIKE, id: id})
-export const getProfile = profile => ({type:GET_PROFILE,profile})
-export const getPosts = posts => ({type:GET_ME_POSTS,posts})
+export const getProfile = profile => ({type: GET_PROFILE, profile})
+export const getPosts = posts => ({type: GET_ME_POSTS, posts})
 export const toggleIsFetchingProfile = isFetchingProfile => ({type: TOGGLE_IS_FETCHING_PROFILE, isFetchingProfile})
+
+export const getProfileInfo = () => {
+    return (dispatch) => {
+        dispatch(toggleIsFetchingProfile(true))
+        ProfileAPI.getProfile()
+            .then(data => {
+                dispatch(toggleIsFetchingProfile(false))
+                dispatch(getProfile(data.profile[0]))
+            })
+        ProfileAPI.getPosts()
+            .then(data => {
+                dispatch(getPosts(data.posts))
+            })
+    }
+}
+export const addPostThunk = (postText) => {
+
+    return (dispatch) => {
+        ProfileAPI.addPost(postText)
+            .then(res => {
+                ProfileAPI.getPosts()
+                    .then(data => {
+                        dispatch(getPosts(data.posts))
+                    })
+            })
+    }
+}

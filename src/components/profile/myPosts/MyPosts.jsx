@@ -1,14 +1,13 @@
 import React from 'react';
 import styles from "./my_posts.module.css";
 import Post from "./post/Post";
-import * as axios from "axios";
+
 
 const MyPosts = (props) => {
-let data=JSON.parse(localStorage.getItem('userData'))
 
-    const addPost = ()=>{
-
+    const addPost = () => {
         props.addPost(props.newPost)
+        props.updateNewPostText(" ")
     }
 
     const createNewPost = (e) => {
@@ -40,13 +39,13 @@ let data=JSON.parse(localStorage.getItem('userData'))
                           key={id}
                           id={id}
                           addNewLike={props.addLike}
-                          img={props.profile.img}
+                          img={props.profile ? props.profile.img : ''}
                     />
                 )
             })}
-                </div>)
+        </div>)
 
-            }
+}
 
 
-            export default MyPosts;
+export default MyPosts;
